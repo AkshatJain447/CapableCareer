@@ -91,10 +91,11 @@ loginUser.addEventListener("click", ()=>{
       last_login: mydate.toISOString()
     })
     .then(()=>{
+      var userinfo;
       get(child(ref(db), 'Users/'+ user.uid)).then((snapshot) => {
         if (snapshot.exists()) {
-          var userinfo = JSON.stringify(snapshot.val());
-          localStorage.setItem("user-info", userinfo);
+          userinfo = snapshot.val();
+          localStorage.setItem("user-info", JSON.stringify(userinfo));
         }
       })
       alert("success");
