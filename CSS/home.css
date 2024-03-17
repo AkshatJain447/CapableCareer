@@ -1,0 +1,273 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: whitesmoke;
+}
+
+#loginbtn{
+  border-radius: 10px;
+  padding: 0px 25px;
+}
+
+#jobScroll{
+  margin: 6px 0px;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+}
+
+.navbarmain{
+  background-color:#404c6c;
+  box-shadow: 0px 0px 5px gray;
+  color: white;
+}
+
+#aboutmeBtn{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+}
+
+#aboutmeBtn:hover{
+  color: rgb(255, 177, 32);
+}
+
+.modalHeader{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-radius: 3px;
+  background: #404c6c;
+  color: white;
+}
+
+.modalHeader i{
+  color: white;
+}
+
+.navHead{
+  font-size: 24px ;
+}
+
+.navBtn{
+  font-size: 18px;
+  color: white;
+  transition: all 0.2s ease;
+}
+.navBtn:hover{
+  color: rgb(255, 177, 32);
+  transform: scale(1.2);
+}
+
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #979797;
+  border-radius: 5px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  font-size: 19px;
+  cursor: pointer;
+  color: black;
+  z-index: 1;
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #39bda7;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button:hover {
+  color: #ffffff;
+  border: 1px solid #84c447;
+}
+
+.button:hover:before {
+  top: -35%;
+  background-color: #84c447;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button:hover:after {
+  top: -45%;
+  background-color: #84c447;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.noticeBoardMain{
+  margin: 10px auto;
+  width: 95%;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 7px rgb(182, 182, 182);
+}
+
+.noticeBoardHead{
+  background-color: #404c6c !important;
+  color: white;
+  font-size: 22px;
+  border-radius: 5px;
+  padding: 8px 5px;
+}
+
+.noticeBoard{
+  margin: 10px 25px;
+  text-align: justify;
+  font-size: 17px;
+}
+
+.dashboard{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  gap: 70px;
+  margin: 35px auto;
+}
+
+.cardMain{
+  border-radius: 5px;
+  padding: 1px;
+  width: 30%;
+  height : 330px ;
+  transition: all 0.2s ease;
+  border: none !important;
+}
+
+.cardMain:hover{
+  border: 1px solid lightgrey !important;
+  box-shadow: 1px 1px 3px rgb(91, 91, 91);
+  background-color: rgba(244, 245, 251, 0.738);
+  cursor: pointer;
+  transform: scale(1.07);
+}
+
+.cardMain img{
+  margin: 5px;
+  height: 70%;
+}
+
+.cardBody{
+  position: relative;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.cardBody h5{
+  font-size: 22px;
+}
+
+.cardBody h6{
+  font-size: 18px;
+  color: #404c6c !important;
+}
+
+.footer{
+  display: flex;
+  background-color: #404c6c;
+  color: white;
+  box-shadow: 0px 0px 5px gray;
+}
+
+.footerA{
+  margin: 40px 50px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+
+.vr{
+  width: 2px;
+  border-radius: 15px;
+  background-color: white;
+  opacity: 0.6;
+  margin-top: 35px;
+  height: 250px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.534);
+}
+
+.footerB{
+  margin: 20px auto;
+  width: 30%;
+}
+
+.contactForm{
+  background: transparent;
+  border: 1px solid rgba(197, 197, 197, 0.499);
+  padding: 10px 20px;
+  border-radius: 10px;
+  height: 260px;
+}
+
+.labelHead{
+  height: 25px;
+  width: 100px;
+  text-align: right;
+}
+
+.labelBody{
+  background-color: whitesmoke;
+  width: 65%;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 3px 10px;
+}
+
+.contactformMsg{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.contactSubmitBtn{
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+#contactSubmitBtn{
+  background-color: rgb(219, 143, 1);
+  color: white;
+}
+
+.msgSent{
+  display: none;
+  margin-left: 43px;
+  text-align: center;
+  color: #8ce23b;
+}

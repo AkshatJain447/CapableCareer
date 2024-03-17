@@ -1,0 +1,484 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: whitesmoke;
+}
+
+#loginbtn{
+  border-radius: 10px;
+  padding: 0px 25px;
+}
+
+#jobScroll{
+  margin: 6px 0px;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+}
+
+.navbarmain{
+  background-color:#404c6c;
+  box-shadow: 0px 0px 5px gray;
+  color: white;
+}
+
+.navHead{
+  font-size: 24px ;
+}
+
+.navBtn{
+  font-size: 18px;
+  color: white;
+  transition: all 0.2s ease;
+}
+.navBtn:hover{
+  color: rgb(255, 177, 32);
+  transform: scale(1.2);
+}
+
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #979797;
+  border-radius: 5px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  font-size: 19px;
+  cursor: pointer;
+  color: black;
+  z-index: 1;
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #39bda7;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button:hover {
+  color: #ffffff;
+  border: 1px solid orange;
+}
+
+.button:hover:before {
+  top: -35%;
+  background-color: orange;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button:hover:after {
+  top: -45%;
+  background-color: orange;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+/* main */
+
+.container{
+  width: 80%;
+  height: fit-content;
+  margin: 40px auto;
+}
+
+#EmployerHeader{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 60px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px gray;
+  padding: 20px;
+}
+
+#EmployerHeader img{
+  width: 200px;
+  height: 200px;
+  border: none;
+  border-radius: 50%;
+}
+
+.userDashboardBody{
+  width: 110%;
+  border-radius: 10px;
+  display: flex;
+  margin: 30px -55px;
+  border: 1px solid gray;
+  box-shadow: 0px 0px 3px black;
+}
+
+.userDashboardSide{
+  margin: 30px auto;
+  width: 40%;
+  border-right: 1px solid #404c6c;
+  text-align: center;
+}
+
+.jobPostBtn{
+  margin-top: 20px;
+}
+
+.button2 {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #979797;
+  border-radius: 5px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  font-size: 19px;
+  cursor: pointer;
+  color: black;
+  z-index: 1;
+}
+
+.button2:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button2:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #39bda7;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button2:hover {
+  color: #ffffff;
+  border: 1px solid rgb(0, 162, 106);
+}
+
+.button2:hover:before {
+  top: -35%;
+  background-color: rgb(0, 162, 106);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button2:hover:after {
+  top: -45%;
+  background-color: rgb(0, 162, 106);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.userDashboardSide li{
+  width: 80%;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 10px auto;
+  list-style: none;
+  transition: all 0.1s ease;
+}
+
+.userDashboardSide li:hover{
+  transform: scale(1.1);
+  font-weight: 600;
+}
+
+.userDashboardSideRight{
+  margin:20px;
+  height: 400px;
+}
+
+.userDashboardSideRightA{
+  display:none;
+  height:0;
+  overflow-y: scroll;
+  visibility: hidden;
+}
+
+h5{
+  text-decoration: underline;
+}
+
+.userDashboardlabel{
+  font-weight: 600;
+}
+
+.userDashboardInput{
+  width: fit-content;
+  padding: 5px 5px;
+  border: none;
+}
+
+.userDashboardjobnumber{
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+}
+
+.userDashBoardSpan{
+  margin: 6px 15px;
+}
+
+.userDashboardSideRightB{
+  height:0;
+  width: 1000px;
+  display:none;
+  visibility: hidden;
+}
+
+.userDashboardSideRightC{
+  display:none;
+  height:0;
+  visibility: hidden;
+  overflow-y: scroll;
+}
+
+.userDashboardSideRight li{
+  list-style: none;
+}
+
+.active{
+  height: 400px;
+  display: block;
+  visibility: visible;
+}
+
+.activeBtn{
+  background-color: #f18c19;
+  border-radius: 10px;
+  color: white;
+  transition: all 0.2s ease-out;
+}
+
+/* personal info */
+.personalInfoContainer{
+  border: 1px solid lightgray;
+  box-shadow: 0px 0px 5px gray;
+  margin: 30px 40px;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.personalInfoContainer h5{
+  font-size: 24px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.personalInfoContainer li{
+  font-size: 18px;
+  margin: 8px 3px;
+}
+
+.personalInfoContainer span{
+  font-weight: 600
+}
+
+.personalInfoContainer button{
+  border: 1px solid rgb(0, 178, 0);
+  padding: 7px 15px;
+  cursor: pointer;
+  float: right;
+  box-shadow: 1px 1px 1px rgb(0, 114, 0);
+  background: white;
+  border-radius: 8px;
+  color: rgb(0, 178, 0);
+  transition: all 0.1s ease;
+}
+
+.personalInfoContainer button:hover{
+  transform: scale(1.1);
+  font-weight: 600;
+}
+
+/* jobs posted */
+.jobCard{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 10px auto;
+  border: 1px solid #dfdfdf;
+  padding: 10px 15px;
+  gap: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 3px rgb(188, 188, 188);
+}
+
+.jobCardC{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.jobCardA{
+  width: 65%;
+  text-align: justify;
+}
+
+.jobcardHead{
+  border: 1px solid black;
+  background-color: #404c6c;
+  width: fit-content;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.jobCardHeding{
+  font-size: 17px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+li{
+  list-style: none;
+}
+
+/* footer */
+.footer{
+  display: flex;
+  background-color: #404c6c;
+  color: white;
+  box-shadow: 0px 0px 5px gray;
+}
+
+.footerA{
+  margin: 40px 50px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+
+.vr{
+  width: 2px;
+  border-radius: 15px;
+  background-color: white;
+  opacity: 0.6;
+  margin-top: 35px;
+  height: 250px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.534);
+}
+
+.footerB{
+  margin: 20px auto;
+  width: 30%;
+}
+
+.contactForm{
+  background: transparent;
+  border: 1px solid rgba(197, 197, 197, 0.499);
+  padding: 10px 20px;
+  border-radius: 10px;
+  height: 260px;
+}
+
+.labelHead{
+  height: 25px;
+  width: 100px;
+  text-align: right;
+}
+
+.labelBody{
+  background-color: whitesmoke;
+  width: 65%;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 3px 10px;
+}
+
+.contactformMsg{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.contactSubmitBtn{
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+#contactSubmitBtn{
+  background-color: rgb(219, 143, 1);
+  color: white;
+}
+
+.msgSent{
+  display: none;
+  margin-left: 43px;
+  text-align: center;
+  color: #8ce23b;
+}
+#aboutmeBtn{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+}
+
+#aboutmeBtn:hover{
+  color: rgb(255, 177, 32);
+}
+
+.modalHeader{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-radius: 3px;
+  background: #404c6c;
+  color: white;
+}
+
+.modalHeader i{
+  color: white;
+}
+
+.postjoblabel{
+  width: 170px !important;
+  text-align: right;
+  margin-right: 10px;
+}
