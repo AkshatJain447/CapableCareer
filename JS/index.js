@@ -60,7 +60,6 @@ registerUser.addEventListener("click", () => {
       })
       
       .then(() => {
-        alert("User created successfully");
         var closebtn = document.querySelector("#registerModalCloseBtn");
         userName.value = userPhone.value = userEmailR.value = userPassR.value = userRoleR.value = null;
         closebtn.click();
@@ -91,22 +90,24 @@ loginUser.addEventListener("click", ()=>{
       last_login: mydate.toISOString()
     })
     .then(()=>{
-      var userinfo;
-      get(child(ref(db), 'Users/'+ user.uid)).then((snapshot) => {
+      var userinfo = {};
+      get(child(ref(db), 'Users/' + user.uid)).then((snapshot) => {
         if (snapshot.exists()) {
           userinfo = snapshot.val();
           localStorage.setItem("user-info", JSON.stringify(userinfo));
+          var closebtn = document.querySelector("#loginModalCloseBtn");
+          userEmailL.value = userPassL.value = null;
+          closebtn.click();
+          if (userinfo.Role === "Employer") {
+            window.location.href = "employer.html";
+          } else {
+            window.location.href = "seeker.html";
+          }
         }
       })
-      alert("success");
-      var closebtn = document.querySelector("#loginModalCloseBtn");
-      userEmailL.value = userPassL.value = null;
-      closebtn.click();
-      if(userinfo.Role === "Employer"){
-        window.location.href = "employer.html";
-      }else{
-        window.location.href = "seeker.html";
-      }
+      .catch((error) => {
+        console.error("Error fetching user info:", error);
+      });
     })
     .catch((error) =>{      
       const errorCode = error.code;

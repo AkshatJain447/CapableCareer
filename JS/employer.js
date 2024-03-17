@@ -27,7 +27,6 @@ var userInfo = JSON.parse(localStorage.getItem("user-info")) ? JSON.parse(localS
 signOutBtn.addEventListener("click", ()=>{
   signOut(auth).then(() => {
     localStorage.removeItem("user-info");
-    alert("Successfully Signed Out");
     window.location.href = "index.html";
   }).catch((error) => {
     alert("Error in signing out");
@@ -161,7 +160,6 @@ function GetAllDataRealTime() {
     snapshot.forEach((childSnapshot) => {
       jobList.push(childSnapshot.val());
     });
-    console.log(jobList);
     requiredJobList = jobList.filter(job => job.HR === userInfo.Name);
     renderPersonalInfo();
     displayJobs();

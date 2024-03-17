@@ -124,7 +124,6 @@ function GetAllDataRealTime() {
     snapshot.forEach((childSnapshot) => {
       jobList.push(childSnapshot.val());
     });
-    console.log(jobList);
     requiredJobList = jobList;
     displayJobs();
   });
