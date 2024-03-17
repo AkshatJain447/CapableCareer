@@ -55,6 +55,7 @@ registerUser.addEventListener("click", () => {
         Phone: userPhone.value,
         Role: userRoleR.value,
         last_login: mydate.toISOString(),
+        profilePic: "images/profile1.jpg",
         EmpId: user.uid,
       })
       
