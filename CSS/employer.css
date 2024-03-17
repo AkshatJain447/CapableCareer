@@ -390,14 +390,13 @@ li{
   text-align: justify;
 }
 
-
 .vr{
   width: 2px;
   border-radius: 15px;
   background-color: white;
   opacity: 0.6;
   margin-top: 35px;
-  height: 250px;
+  height: 260px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.534);
 }
 
@@ -411,7 +410,7 @@ li{
   border: 1px solid rgba(197, 197, 197, 0.499);
   padding: 10px 20px;
   border-radius: 10px;
-  height: 260px;
+  height: 280px;
 }
 
 .labelHead{
