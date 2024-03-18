@@ -108,7 +108,6 @@ var storedJobId;
 get(child(ref(db), 'JobId')).then((snapshot)=>{
   storedJobId = snapshot.val();
 })
-var jobId = storedJobId ? storedJobId : 0;
 
 postNewBtn.addEventListener('click', function(){
   var jobTitle = document.querySelector('#jobTitle');
@@ -131,11 +130,11 @@ postNewBtn.addEventListener('click', function(){
     JobLocation : Location.value,
     ApplicationStatus : Status.value,
     HR: userInfo.Name,
-    JobId: jobId,
+    JobId: ++storedJobId,
   };
 
-  set(ref(db, 'JobList/' + ++jobId), job_info).then(()=>{
-    set(ref(db, 'JobId'), jobId);
+  set(ref(db, 'JobList/' + storedJobId), job_info).then(()=>{
+    set(ref(db, 'JobId'), storedJobId);
     window.location.reload();
     setTimeout(()=>{
       alert("Job Posted Successfully");
