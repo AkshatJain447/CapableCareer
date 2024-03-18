@@ -104,7 +104,10 @@ function displayJobs(){
 }
 
 var postNewBtn = document.querySelector("#postNewJob");
-var storedJobId = localStorage.getItem("jobID");
+var storedJobId;
+get(child(ref(db), 'JobId')).then((snapshot)=>{
+  storedJobId = snapshot.val();
+})
 var jobId = storedJobId ? storedJobId : 0;
 
 postNewBtn.addEventListener('click', function(){
@@ -132,7 +135,7 @@ postNewBtn.addEventListener('click', function(){
   };
 
   set(ref(db, 'JobList/' + ++jobId), job_info).then(()=>{
-    localStorage.setItem( "jobId" , jobId);
+    set(ref(db, 'JobId'), jobId);
     window.location.reload();
     setTimeout(()=>{
       alert("Job Posted Successfully");
